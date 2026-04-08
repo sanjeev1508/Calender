@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --cal-accent: #6ea8d3;
+  --cal-bg: #f7fafc;
+  --cal-surface: #ffffff;
+  --cal-text: #0f172a;
+  --cal-muted: #64748b;
+  --cal-ring: rgba(15, 23, 42, 0.12);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --cal-bg: #0f172a;
+  --cal-surface: #111827;
+  --cal-text: #f8fafc;
+  --cal-muted: #94a3b8;
+  --cal-ring: rgba(226, 232, 240, 0.1);
+}
+
+html, body {
+  min-height: 100%;
+  background: var(--cal-bg);
+  color: var(--cal-text);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(111, 202, 255, 0.35);
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(14px);
+  }
+
+  .dark .glass-panel {
+    background: rgba(15,23,42,0.7);
+  }
+
+  .paper-noise {
+    background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+}
